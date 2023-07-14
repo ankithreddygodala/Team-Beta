@@ -69,6 +69,20 @@ def dashboard():
 
     return render_template('dashboard.html', username=username)
 
+def calculate_score(predicted_answers):
+    score = 0
+    for answer in predicted_answers:
+        if not answer.isdigit():
+            # Handle non-numeric values
+            score += 0  # Assign a score of 0 for non-numeric answers
+        else:
+            # Convert the answer to a float and add it to the score
+            score += float(answer)
+    return score
+
+
+
+
 @app.route('/quiz', methods=['GET', 'POST'])
 def quiz():
     
