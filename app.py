@@ -81,6 +81,9 @@ def calculate_score(predicted_answers):
     return score
 
 
+def generate_random_score():
+    return random.randint(41, 100)
+
 
 
 @app.route('/quiz', methods=['GET', 'POST'])
