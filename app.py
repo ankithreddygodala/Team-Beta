@@ -84,7 +84,9 @@ def calculate_score(predicted_answers):
 def generate_random_score():
     return random.randint(41, 100)
 
-
+def create_line_chart_data(scores):
+    data = [{'x': i+1, 'y': score} for i, score in enumerate(scores)]
+    return data
 
 @app.route('/quiz', methods=['GET', 'POST'])
 def quiz():
